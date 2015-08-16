@@ -1,4 +1,3 @@
-
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
@@ -9,12 +8,9 @@
 
 if (!hasInterface) exitWith {};
 
-//#define ICON_fadeDistance 1250
-#define ICON_fadeDistance 400
-//#define ICON_limitDistance 2000
-#define ICON_limitDistance 500
-//#define ICON_sizeScale 0.75
-#define ICON_sizeScale 0.5
+#define ICON_fadeDistance 500
+#define ICON_limitDistance 600
+#define ICON_sizeScale 0.4
 
 if (isNil "showPlayerNames") then { showPlayerNames = false };
 
@@ -57,7 +53,7 @@ drawPlayerIcons_thread = [] spawn
 				   (_unit != player || cameraOn != vehicle player) &&
 				   {!(_unit getVariable ["playerSpawning", false]) &&
 				   (vehicle _unit != getConnectedUAV player || cameraOn != vehicle _unit) && // do not show UAV AI icons when controlling UAV
-				   {typeOf _unit != "HeadlessClient_F"}}}) then 
+				   {getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation") != "headlessclient"}}}) then 
 				{
 					_dist = _unit distance positionCameraToWorld [0,0,0];
 					_pos = _unit modelToWorldVisual [0, 0, 1.35]; // Torso height
@@ -70,13 +66,13 @@ drawPlayerIcons_thread = [] spawn
 						_icon = _teamIcon;
 						_size = 0;
 
-						if (_unit getVariable ["FAR_isUnconscious", 0] == 1) then
+						if (_unit call A3W_fnc_isUnconscious) then
 						{
 							_icon = _reviveIcon;
 							_size = (2 - ((_dist / ICON_limitDistance) * 0.8)) * _uiScale;
 
 							// Revive icon blinking code
-							if (_unit getVariable ["FAR_isStabilized", 0] == 0) then
+							if (_unit call A3W_fnc_isBleeding) then
 							{
 								_blink = false;
 								_timestamp = _unit getVariable ["FAR_iconBlinkTimestamp", 0];

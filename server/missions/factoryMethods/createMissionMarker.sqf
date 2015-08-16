@@ -12,9 +12,14 @@ _pos = _this select 1;
 _marker = format ["mission_%1_%2", [_text] call fn_filterString, call A3W_fnc_generateKey];
 
 _marker = createMarker [_marker, _pos];
-_marker setMarkerType "mil_destroy";
-_marker setMarkerSize [1.25, 1.25];
+//_marker setMarkerType "mil_destroy";
+//_marker setMarkerSize [1.25, 1.25];
+_marker setMarkerType "hd_objective";
+//_marker setMarkerShape "ELLIPSE";
+//_marker setMarkerSize [500, 500];
 _marker setMarkerColor "ColorRed";
+//_marker setMarkerBrush "SolidBorder";
 _marker setMarkerText _text;
+//_marker setMarkerAlpha 0.5;
 
 _marker

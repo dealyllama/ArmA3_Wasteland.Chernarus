@@ -1,6 +1,6 @@
 _group=group (_this select 0);
-_group setBehaviour "Combat";
-_group setSpeedMode "Normal";
+_group setBehaviour "AWARE";
+_group setSpeedMode "FULL";
 
 	if (side (_this select 0) == CIVILIAN) 
 		then {

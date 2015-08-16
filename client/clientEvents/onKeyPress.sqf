@@ -56,6 +56,22 @@ switch (true) do
 
 // ********** Action keys **********
 
+//Holster / recall weapon.
+if (!_handled && _key == 5) then
+{
+	if(vehicle player == player && currentWeapon player != "") then {
+		curWep_h = currentWeapon player;
+		player action ["SwitchWeapon", player, player, 100];
+	}
+	
+	else
+	{
+		if(curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
+			player selectWeapon curWep_h;
+		};
+	};
+};
+
 // Parachute
 if (!_handled && _key in actionKeys "GetOver") then
 {
@@ -122,6 +138,12 @@ if (!_handled && _key in actionKeys "NetworkStats") then
 
 		_handled = true;
 	};
+};
+
+// Push-to-talk
+if (!_handled && _key in (actionKeys "PushToTalk" + actionKeys "PushToTalkAll")) then
+{
+	[true] call fn_voiceChatControl;
 };
 
 _handled

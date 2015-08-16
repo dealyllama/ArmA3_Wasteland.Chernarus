@@ -16,27 +16,28 @@ if (isnil "SERVER") then {Hint "You must ADD a object named SERVER";Player Sidec
 if (isServer) then {
 IF (!isnil ("COScomplete")) then {Hint "Check your call. COS was called twice!";}else{
 
-COS_distance=500;//Set spawn distance
+COS_distance=400;//Set spawn distance
 _aerielActivation=true;// Set if flying units can activate civilian Zones
 
-blackListTowns = ["sagonisi"];// Remove towns from COS
+blackListTowns = ["elektrozavodsk","chernogorsk","balota","kamenka","bor","kozlovka","gorka","mogilevka","stary sobor","grishino","vybor","berezino","orlovets","komarovo","kamyshovo","tulga","pusta","msta","solnychniy","krasnostav","gvozdno","myshkino","zelenogorsk","staroye","pulkovo","rogovo","pustoshka","guglovo","novy sobor"];// Remove towns from COS
 
-whiteListMkrs=[];// Add Custom Markers for COS to populate 
+whiteListMkrs=[]; //["COS_1", "COS_2", "COS_3", "COS_4", "COS_5", "COS_6", "COS_7", "COS_8", "COS_9", "COS_10", "COS_11"];// Add Custom Markers for COS to populate 
 
-DefaultSide = Civilian;// Set side of units spawned
+DefaultSide = civilian;// Set side of units spawned
 
 _showMarker=true;// Show COS markers on map
 
 showTownLabel = false;// Show town information when entering COS zones
 
-debugCOS=true;// Show spawned units on the map
+debugCOS=false;// Show spawned units on the map
 
 COSpedestrians=true; //Spawn pedestrians
 COScars=true;// Spawn Cars
-COSparked=false;// Spawn parked cars
+COSparked=true;// Spawn parked cars
 
 // Types of units that will be spawned as civilians.
 COScivPool =["C_man_1","C_man_1_1_F","C_man_1_2_F","C_man_1_3_F","C_man_hunter_1_F","C_man_p_beggar_F","C_man_p_beggar_F_afro","C_man_p_fugitive_F","C_man_p_shorts_1_F","C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F","C_man_shorts_1_F","C_man_shorts_2_F","C_man_shorts_3_F","C_man_shorts_4_F","C_man_w_worker_F"];	
+//COScivPool =["I_G_Soldier_F","I_G_Soldier_lite_F","I_G_Soldier_SL_F","I_G_Soldier_SL_F","I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_medic_F","I_G_Soldier_AR_F","I_G_medic_F","I_G_engineer_F","I_G_Soldier_exp_F","I_G_Soldier_GL_F","I_G_Soldier_M_F","I_G_Soldier_LAT_F","I_G_Soldier_A_F","I_G_officer_F"];
 COSmotPool =["C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_01_F","C_SUV_01_F","C_Van_01_box_F","C_Van_01_fuel_F","C_Van_01_transport_F"];
 
 COSmaxGrps=15;//Set Maximum group limit for COS at any one time (If limit is hit then civilians will be placed into a single group for each town)
@@ -71,8 +72,8 @@ if (({_name==_x} count blackListTowns)>0 OR (_name == "")) then {}else{
 
 			
 // Scan for houses around the town area
-	if (_sizeX < 50) then {_sizeX=300;};
-	if (_sizeY < 50) then {_sizeY=300;};
+	if (_sizeX < 150) then {_sizeX=300;};
+	if (_sizeY < 150) then {_sizeY=300;};
 	if (_sizeY>_sizeX) then {_mSize=_sizeY}else{_mSize=_sizeX};// Get the largest size
 		_houses= count (nearestObjects [_pos, ["house"], _mSize]);// Count number of houses in town
 
@@ -82,14 +83,14 @@ _randomisation=2;
 	if (_houses <= 10) 
 		then {
 	_civilians=2+ round(random _randomisation);// Civilians spawned
-	_vehicles=0;// Moving Vehicles Spawned
-	_parked=1;// Parked Vehicles Spawned
+	_vehicles=1;// Moving Vehicles Spawned
+	_parked=0;// Parked Vehicles Spawned
 			};		
  	if (_houses <= 30 and _houses > _randomisation) 
 		then {
 	_civilians=4+ round(random _randomisation);// Civilians spawned
 	_vehicles=1;// Moving Vehicles Spawned
-	_parked=2;// Parked Vehicles Spawned
+	_parked=1;// Parked Vehicles Spawned
 			};
 			
  	if (_houses <= 70 and _houses > 30) 
@@ -102,13 +103,13 @@ _randomisation=2;
  	if (_houses <= 140 and _houses > 70) 
 		then {
 	_civilians=8+ round(random _randomisation);// Civilians spawned
-	_vehicles=3;// Moving Vehicles Spawned
-	_parked=3;// Parked Vehicles Spawned
+	_vehicles=2;// Moving Vehicles Spawned
+	_parked=2;// Parked Vehicles Spawned
 			};
  	if (_houses > 140) 
 		then {
 	_civilians=10+ round(random _randomisation);// Civilians spawned
-	_vehicles=4;// Moving Vehicles Spawned
+	_vehicles=3;// Moving Vehicles Spawned
 	_parked=3;// Parked Vehicles Spawned
 			};
 			
@@ -123,10 +124,10 @@ _randomisation=2;
 		_foo setMarkerSize [_sizeX, _sizeY];
 		_foo setMarkerShape "ELLIPSE";
 		_foo setMarkerBrush "SOLID";
-		_foo setMarkerColor "ColorGreen";
+		_foo setMarkerColor "ColorOrange";
 		_foo setMarkerText _name;
 			cosMkrArray set [count cosMkrArray,_foo];
- if (!_showMarker) then {_foo setmarkerAlpha 0;}else{_foo setmarkerAlpha 0.5;};// Show or hide marker
+ if (!_showMarker) then {_foo setmarkerAlpha 0;}else{_foo setmarkerAlpha 0.7;};// Show or hide marker
 	
 
 // Get positions until we have enough for the population

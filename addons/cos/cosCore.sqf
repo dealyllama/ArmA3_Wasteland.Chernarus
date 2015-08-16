@@ -83,7 +83,8 @@ for "_i" from 1 to _civilians do {
 				_localGrps=_localGrps+1;
 						};
 		_unit = [_grp, _tempPos] call createArmedCiv;						
-//		_unit = _grp createUnit [_tempUnit, _tempPos, [], 0, "NONE"];	
+//		_unit = _grp createUnit [_tempUnit, _tempPos, [], 0, "NONE"];
+		
 		_civilianArray set [count _civilianArray,_grp];
 									
 				null =[_unit] execVM "addons\cos\addScript_Unit.sqf";

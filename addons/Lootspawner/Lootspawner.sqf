@@ -19,7 +19,7 @@ swSpZadjust = false;                //needed for ArmA 2 and older Maps/Buildings
 #define CHANCES_FULL_FUEL_CAN 35    //Chance (in %) of a spawned fuelcan to be full instead of empty
 #define LOOT_Z_ADJUST -0.1          //High adjustment thats generally added to every spawnpoint
 
-_tmpTstPlace = [13710, 2947.51, 47.07];   //Coord's, in [x,y,z] of a preferably flat and unocupied piece of land
+_tmpTstPlace = [14730, 16276, 0];   //Coord's, in [x,y,z] of a preferably flat and unocupied piece of land
 
 //"spawnClassChance_list" array of [%weapon, %magazine, %ICV, %backpack, %object]
 //                                  %weapon     : chance weight to spawn a weapon on spot

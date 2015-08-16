@@ -31,7 +31,7 @@ _grp = _this select 0;
 _pos = _this select 1;
 _vehicleType = if (count _this > 2) then { _this select 2 } else { "StaticWeapon" };
 
-_grp allowFleeing 0;
+_grp allowFleeing 0.1;
 
 // Static weapons
 private ["_units", "_staticWeapons", "_unit"];
@@ -63,15 +63,15 @@ private ["_wp1", "_wp2"];
 
 _wp1 = _grp addWaypoint [_pos, 0];
 _wp1 setWaypointType "SAD"; // Seek And Destroy
-[_grp, 1] setWaypointBehaviour "SAFE";
-[_grp, 1] setWaypointCombatMode "GREEN";
+[_grp, 1] setWaypointBehaviour "AWARE";
+[_grp, 1] setWaypointCombatMode "YELLOW";
 [_grp, 1] setWaypointCompletionRadius 75;
 [_grp, 1] setWaypointStatements ["true", "(group this) setCurrentWaypoint [group this, 2]"];
 
 _wp2 = _grp addWaypoint [_pos, 0];
 _wp2 setWaypointType "DISMISS";
-[_grp, 2] setWaypointBehaviour "SAFE";
-[_grp, 2] setWaypointCombatMode "GREEN";
+[_grp, 2] setWaypointBehaviour "AWARE";
+[_grp, 2] setWaypointCombatMode "YELLOW";
 [_grp, 2] setWaypointCompletionRadius 75;
 [_grp, 2] setWaypointStatements ["true", "(group this) setCurrentWaypoint [group this, 1]"];
 
@@ -106,9 +106,9 @@ _wp2 setWaypointType "DISMISS";
 			{
 				_unitPos = getPosASL _unit;
 
-				if (_unitPos vectorDistance _targetPos > 75) then
+				if (_unitPos vectorDistance _targetPos > 150) then
 				{
-					_doMove = [[0, 5 + random 65, 0], -(([_targetPos, _unitPos] call BIS_fnc_dirTo) + (45 - random 90))] call BIS_fnc_rotateVector2D;
+					_doMove = [[0, 5 + random 90, 0], -(([_targetPos, _unitPos] call BIS_fnc_dirTo) + (45 - random 90))] call BIS_fnc_rotateVector2D;
 					_unit moveTo (_targetPos vectorAdd _doMove);
 					sleep 3;
 				};
