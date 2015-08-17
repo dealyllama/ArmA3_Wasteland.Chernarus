@@ -19,7 +19,7 @@ IF (!isnil ("COScomplete")) then {Hint "Check your call. COS was called twice!";
 COS_distance=400;//Set spawn distance
 _aerielActivation=true;// Set if flying units can activate civilian Zones
 
-blackListTowns = ["elektrozavodsk","chernogorsk","balota","kamenka","bor","kozlovka","gorka","mogilevka","stary sobor","grishino","vybor","berezino","orlovets","komarovo","kamyshovo","tulga","pusta","msta","solnychniy","krasnostav","gvozdno","myshkino","zelenogorsk","staroye","pulkovo","rogovo","pustoshka","guglovo","novy sobor"];// Remove towns from COS
+blackListTowns = ["elektrozavodsk","chernogorsk","balota","kamenka","bor","kozlovka","gorka","mogilevka","stary sobor","grishino","vybor","berezino","orlovets","komarovo","kamyshovo","tulga","pusta","msta","Solnychniy","krasnostav","gvozdno","myshkino","zelenogorsk","staroye","pulkovo","rogovo","pustoshka","guglovo","novy sobor","solnichniy","olsha","petrovka"];// Remove towns from COS
 
 whiteListMkrs=[]; //["COS_1", "COS_2", "COS_3", "COS_4", "COS_5", "COS_6", "COS_7", "COS_8", "COS_9", "COS_10", "COS_11"];// Add Custom Markers for COS to populate 
 

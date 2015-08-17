@@ -87,7 +87,7 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="AC4OM A3Wasteland Charnarus v1.2";
+		briefingName="AC4OM A3Wasteland Chernarus v1.2";
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
