@@ -82,35 +82,35 @@ if (({_name==_x} count blackListTowns)>0 OR (_name == "")) then {}else{
 _randomisation=2;
 	if (_houses <= 10) 
 		then {
-	_civilians=2+ round(random _randomisation);// Civilians spawned
+	_civilians=1+ round(random _randomisation);// Civilians spawned
 	_vehicles=1;// Moving Vehicles Spawned
 	_parked=0;// Parked Vehicles Spawned
 			};		
  	if (_houses <= 30 and _houses > _randomisation) 
 		then {
-	_civilians=4+ round(random _randomisation);// Civilians spawned
+	_civilians=2+ round(random _randomisation);// Civilians spawned
 	_vehicles=1;// Moving Vehicles Spawned
-	_parked=1;// Parked Vehicles Spawned
+	_parked=0;// Parked Vehicles Spawned
 			};
 			
  	if (_houses <= 70 and _houses > 30) 
 		then {
-	_civilians=6+ round(random _randomisation);// Civilians spawned
-	_vehicles=2;// Moving Vehicles Spawned
-	_parked=2;// Parked Vehicles Spawned
+	_civilians=3+ round(random _randomisation);// Civilians spawned
+	_vehicles=1;// Moving Vehicles Spawned
+	_parked=0;// Parked Vehicles Spawned
 			};
 			
  	if (_houses <= 140 and _houses > 70) 
 		then {
-	_civilians=8+ round(random _randomisation);// Civilians spawned
-	_vehicles=2;// Moving Vehicles Spawned
-	_parked=2;// Parked Vehicles Spawned
+	_civilians=4+ round(random _randomisation);// Civilians spawned
+	_vehicles=1;// Moving Vehicles Spawned
+	_parked=0;// Parked Vehicles Spawned
 			};
  	if (_houses > 140) 
 		then {
-	_civilians=10+ round(random _randomisation);// Civilians spawned
-	_vehicles=3;// Moving Vehicles Spawned
-	_parked=3;// Parked Vehicles Spawned
+	_civilians=5+ round(random _randomisation);// Civilians spawned
+	_vehicles=2;// Moving Vehicles Spawned
+	_parked=0;// Parked Vehicles Spawned
 			};
 			
  if (!COSpedestrians) then {_civilians=0;};	// If pedestrians disabled spawn 0
