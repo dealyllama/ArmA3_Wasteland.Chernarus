@@ -40,6 +40,7 @@ if (currentVisionMode player == 2) then																		// check for TI Mode
 // 2015-04-29 11:44pm
 // contributions from BIStudio Forums, edited by CRE4MPIE
 
+if (isServer) exitwith {};
 
 _layer = 85125; 
 _launchers =["launch_I_Titan_short_F","launch_O_Titan_short_F","launch_B_Titan_short_F","launch_Titan_short_F","launch_Titan_F","launch_O_Titan_F","launch_I_Titan_F","launch_B_Titan_F"];  // launcher array
