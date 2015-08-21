@@ -72,7 +72,8 @@ class Mission
 		"a3_characters_f_gamma",
 		"a3_characters_f",
 		"A3_Structures_F_EPC_Civ_Accessories",
-		"A3_Modules_F"
+		"A3_Modules_F",
+		"aia_chernarus_config"
 	};
 	addOnsAuto[]=
 	{
@@ -82,7 +83,8 @@ class Mission
 		"A3_Characters_F_INDEP",
 		"A3_Characters_F_Civil",
 		"A3_Modules_F",
-		"A3_Structures_F_EPC_Civ_Accessories"
+		"A3_Structures_F_EPC_Civ_Accessories",
+		"aia_chernarus_config"
 	};
 	randomSeed=14957468;
 	class Intel
@@ -2016,7 +2018,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=121;
+		items=139;
 		class Item0
 		{
 			position[]={11979.954,19.544149,3826.3022};
@@ -2960,10 +2962,144 @@ class Mission
 			text="AC4OM TeamSpeak 54.252.197.189";
 			type="mil_flag";
 		};
+		class Item121
+		{
+			position[]={1924.9783,0.26303151,2094.429};
+			name="boatSpawn_1_1";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item122
+		{
+			position[]={3623.1255,0.2768251,2072.5361};
+			name="boatSpawn_1_3";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item123
+		{
+			position[]={4321.0908,0.36811957,2168.3938};
+			name="boatSpawn_1_4";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item124
+		{
+			position[]={7003.0664,0.025298417,2204.7957};
+			name="boatSpawn_1_6";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item125
+		{
+			position[]={7189.7871,0.34206566,2413.4636};
+			name="boatSpawn_1_7";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item126
+		{
+			position[]={7088.0181,0.34007254,2319.5837};
+			name="boatSpawn_1_8";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item127
+		{
+			position[]={10078.849,0.18712294,1672.6682};
+			name="boatSpawn_1_9";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item128
+		{
+			position[]={10169.606,0.50136411,1737.7622};
+			name="boatSpawn_1_10";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item129
+		{
+			position[]={10397.78,0.28351367,1787.3315};
+			name="boatSpawn_1_11";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item130
+		{
+			position[]={10992.09,0.30142105,2698.6055};
+			name="boatSpawn_1_12";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item131
+		{
+			position[]={12063.824,0.3920109,3402.0479};
+			name="boatSpawn_1_13";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item132
+		{
+			position[]={13560.324,0.29815903,6242.6416};
+			name="boatSpawn_1_14";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item133
+		{
+			position[]={13149.452,0.21139562,9835.3545};
+			name="boatSpawn_1_18";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item134
+		{
+			position[]={13159.961,0.15602945,10100.638};
+			name="boatSpawn_1_20";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item135
+		{
+			position[]={13493.68,0.28790274,13774.287};
+			name="boatSpawn_1_19";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item136
+		{
+			position[]={13081.761,0.28575841,8243.8486};
+			name="boatSpawn_1_15";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item137
+		{
+			position[]={13421.047,0.17736995,3020.0645};
+			name="boatSpawn_1_2";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item138
+		{
+			position[]={5959.6382,0.28807974,1980.2075};
+			name="boatSpawn_1_6_1";
+			type="Empty";
+			colorName="ColorBlue";
+		};
 	};
 };
 class Intro
 {
+	addOns[]=
+	{
+		"aia_chernarus_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_chernarus_config"
+	};
 	randomSeed=11737026;
 	class Intel
 	{
@@ -2983,6 +3119,14 @@ class Intro
 };
 class OutroWin
 {
+	addOns[]=
+	{
+		"aia_chernarus_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_chernarus_config"
+	};
 	randomSeed=16432731;
 	class Intel
 	{
@@ -3002,6 +3146,14 @@ class OutroWin
 };
 class OutroLoose
 {
+	addOns[]=
+	{
+		"aia_chernarus_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_chernarus_config"
+	};
 	randomSeed=2588275;
 	class Intel
 	{
