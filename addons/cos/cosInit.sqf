@@ -16,7 +16,7 @@ if (isnil "SERVER") then {Hint "You must ADD a object named SERVER";Player Sidec
 if (isServer) then {
 IF (!isnil ("COScomplete")) then {Hint "Check your call. COS was called twice!";}else{
 
-COS_distance=400;//Set spawn distance
+COS_distance=300;//Set spawn distance
 _aerielActivation=true;// Set if flying units can activate civilian Zones
 
 blackListTowns = ["elektrozavodsk","chernogorsk","balota","kamenka","bor","kozlovka","gorka","mogilevka","stary sobor","grishino","vybor","berezino","orlovets","komarovo","kamyshovo","tulga","pusta","msta","Solnychniy","krasnostav","gvozdno","myshkino","zelenogorsk","staroye","pulkovo","rogovo","pustoshka","guglovo","novy sobor","solnichniy","olsha","petrovka"];// Remove towns from COS
