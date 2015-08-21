@@ -25,7 +25,7 @@ whiteListMkrs=[]; //["COS_1", "COS_2", "COS_3", "COS_4", "COS_5", "COS_6", "COS_
 
 DefaultSide = civilian;// Set side of units spawned
 
-_showMarker=true;// Show COS markers on map
+_showMarker=false;// Show COS markers on map
 
 showTownLabel = false;// Show town information when entering COS zones
 
