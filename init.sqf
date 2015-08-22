@@ -86,6 +86,6 @@ if (hasInterface || isServer) then
 	[] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
 	[] execVM "addons\lsd_nvg\init.sqf";
 	[] execVM "addons\MeanY_3rd_fps\3rdrestriction.sqf"; //3rd person restrictions
-	[] execVM "addons\disableThermal\disablethermal.sqf";  //disable thermal vision
+//	[] execVM "addons\disableThermal\disablethermal.sqf";  //disable thermal vision (call from client\init.sqf)
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
