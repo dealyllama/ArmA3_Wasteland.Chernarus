@@ -59,7 +59,6 @@ switch (["A3W_vehicleLoot", 1] call getPublicVar) do
 		};
 
 		_car addItemCargoGlobal [_additionOne, 1];
-		_car addMagazineCargoGlobal [_additionThree, 1];
 	};
 	case 2:
 	{
@@ -70,7 +69,6 @@ switch (["A3W_vehicleLoot", 1] call getPublicVar) do
 		_car addItemCargoGlobal [_additionOne, 1];
 		_car addItemCargoGlobal [_additionTwo, 1];
 		if (_nightTime) then { _car addMagazineCargoGlobal [_additionThree, 1] };
-		_car addMagazineCargoGlobal [_additionThree, 1];
 	};
 	case 3:
 	{
@@ -87,6 +85,5 @@ switch (["A3W_vehicleLoot", 1] call getPublicVar) do
 		_car addItemCargoGlobal [_additionOne, 2];
 		_car addItemCargoGlobal [_additionTwo, 2];
 		if (_nightTime) then { _car addMagazineCargoGlobal [_additionThree, 1] };
-		_car addMagazineCargoGlobal [_additionThree, 1];
 	};
 };

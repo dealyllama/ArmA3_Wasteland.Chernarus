@@ -17,29 +17,30 @@ _alt = _this select 4;
 _handled = false;
 
 // ********** Hardcoded keys **********
+// keycodes are defined in client\clientEvents\customKeys.sqf
 switch (true) do
 {
 	// U key
-	case (_key == 22):
+	case (_key in A3W_customKeys_adminMenu):
 	{
 		execVM "client\systems\adminPanel\checkAdmin.sqf";
 	};
 
 	// Tilde (key above Tab)
-	case (_key == 41):
+	case (_key in A3W_customKeys_playerMenu):
 	{
 		[] spawn loadPlayerMenu;
 		_handled = true;
 	};
 
 	// Home & Windows keys
-	case (_key in [199,219,220]):
+	case (_key in A3W_customKeys_playerNames):
 	{
 		showPlayerNames = if (isNil "showPlayerNames") then { true } else { !showPlayerNames };
 	};
 
 	// Earplugs - End Key
-	case (_key == 207):
+	case (_key in A3W_customKeys_earPlugs):
 	{
 		if (soundVolume > 0.5) then
 		{
@@ -55,22 +56,6 @@ switch (true) do
 };
 
 // ********** Action keys **********
-
-//Holster / recall weapon.
-if (!_handled && _key == 5) then
-{
-	if(vehicle player == player && currentWeapon player != "") then {
-		curWep_h = currentWeapon player;
-		player action ["SwitchWeapon", player, player, 100];
-	}
-	
-	else
-	{
-		if(curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
-			player selectWeapon curWep_h;
-		};
-	};
-};
 
 // Parachute
 if (!_handled && _key in actionKeys "GetOver") then

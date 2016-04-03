@@ -32,7 +32,7 @@ if (isServer) then
 		{
 			if (!(_unit call A3W_fnc_isUnconscious) && {!isNil "isConfigOn" && {["A3W_playerSaving"] call isConfigOn}}) then
 			{
-				if (!(_unit getVariable ["playerSpawning", false]) && getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation") != "headlessclient") then
+				if (!(_unit getVariable ["playerSpawning", true]) && getText (configFile >> "CfgVehicles" >> typeOf _unit >> "simulation") != "headlessclient") then
 				{
 					[_uid, [], [_unit, false] call fn_getPlayerData] spawn fn_saveAccount;
 				};
@@ -71,7 +71,7 @@ if (isServer) then
 	// Broadcast server rules
 	if (loadFile (externalConfigFolder + "\serverRules.sqf") != "") then
 	{
-		[[[call compile preprocessFileLineNumbers (externalConfigFolder + "\serverRules.sqf")], "client\functions\defineServerRules.sqf"], "BIS_fnc_execVM", true, true] call A3W_fnc_MP;
+		[[call compile preprocessFileLineNumbers (externalConfigFolder + "\serverRules.sqf")], "client\functions\defineServerRules.sqf"] remoteExecCall ["execVM", [-2,0] select hasInterface, true];
 	};
 };
 
@@ -132,7 +132,8 @@ if (isServer) then
 		"A3W_hcObjCaching",
 		"A3W_hcObjCachingID",
 		"A3W_hcObjSaving",
-		"A3W_hcObjSavingID"
+		"A3W_hcObjSavingID",
+		"A3W_headshotNoRevive"
 	];
 
 	["A3W_join", "onPlayerConnected", { [_id, _uid, _name] spawn fn_onPlayerConnected }] call BIS_fnc_addStackedEventHandler;
@@ -153,7 +154,7 @@ _purchasedVehicleSavingOn = ["A3W_purchasedVehicleSaving"] call isConfigOn;
 _missionVehicleSavingOn = ["A3W_missionVehicleSaving"] call isConfigOn;
 
 _objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn);
-_vehicleSavingOn = (_purchasedVehicleSavingOn || _purchasedVehicleSavingOn);
+_vehicleSavingOn = (_purchasedVehicleSavingOn || _missionVehicleSavingOn);
 _hcObjSavingOn = ["A3W_hcObjSaving"] call isConfigOn;
 
 if (_hcObjSavingOn) then
@@ -197,6 +198,8 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			A3W_extDB_ConfigName = compileFinal str (["A3W_extDB_ConfigName", "A3W"] call getPublicVar);
 			A3W_extDB_IniName = compileFinal str (["A3W_extDB_IniName", "a3wasteland"] call getPublicVar);
 			A3W_extDB_RconName = compileFinal str (["A3W_extDB_RconName", "A3W"] call getPublicVar);
+
+			diag_log format ["[INFO] extDB2 v%1 extension loaded", _version];
 		}
 		else
 		{
@@ -207,7 +210,7 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			}
 			else
 			{
-				diag_log "[INFO] ███ A3W NOT running with extDB!";
+				diag_log "[INFO] ███ extDB2 NOT FOUND! Make sure extDB2.dll (Windows) or extDB2.so (Linux) and extdb-conf.ini are in the same directory as arma3server, and that you are using the -filePatching parameter";
 			};
 
 			_savingMethod = "profile"; // fallback
@@ -229,7 +232,7 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 		}
 		else
 		{
-			diag_log "[INFO] ███ A3W NOT running with iniDB!";
+			diag_log "[INFO] ███ iniDB NOT FOUND! Make sure iniDB.dll is in the same directory as arma3server.exe, and that you are using the -filePatching parameter";
 			_savingMethod = "profile"; // fallback
 		};
 	};
@@ -265,9 +268,10 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			{
 				waitUntil {scriptDone _this};
 
-				["A3W_flagCheckOnJoin", "onPlayerConnected", { [_uid, _name] spawn fn_kickPlayerIfFlagged }] call BIS_fnc_addStackedEventHandler;
+				["A3W_flagCheckOnJoin", "onPlayerConnected", { [_uid, _name, _owner] spawn fn_kickPlayerIfFlagged }] call BIS_fnc_addStackedEventHandler;
 
-				{ [getPlayerUID _x, name _x] call fn_kickPlayerIfFlagged } forEach (call fn_allPlayers);
+				// force check for non-JIP players
+				{ waitUntil {!isNull player}; [player] remoteExec ["A3W_fnc_checkPlayerFlag", 2] } remoteExec ["call", -2];
 			};
 		};
 	};

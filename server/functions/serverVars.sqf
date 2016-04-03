@@ -159,10 +159,10 @@ staticPlaneList =
 //Random Weapon List - Change this to what you want to spawn in cars.
 vehicleWeapons =
 [
-	"hgun_P07_F",
-	"hgun_Rook40_F",
-	"hgun_ACPC2_F",
-	"arifle_SDAR_F",
+//	"hgun_P07_F",
+//	"hgun_Rook40_F",
+//	"hgun_ACPC2_F",
+//	"arifle_SDAR_F",
 	"SMG_01_F",	// Vermin .45 ACP
 	"SMG_02_F",	// Sting 9mm
 	"hgun_PDW2000_F",
@@ -182,49 +182,17 @@ vehicleWeapons =
 	"arifle_MXM_F",
 	"srifle_EBR_F",
 	"LMG_Mk200_F",
-	"LMG_Zafir_F",
-	
-//	Additional standard weapons
-	"arifle_Mk20C_plain_F",
-	"arifle_Mk20_plain_F",
-	"arifle_Mk20_GL_plain_F",
-	"arifle_MXC_Black_F",
-	"arifle_MX_Black_F",
-	"arifle_MX_GL_Black_F",
-	"arifle_MXM_Black_F",
-	"srifle_DMR_01_F",
-	
-//	DLC weapons
-	"srifle_DMR_06_camo_F",
-	"srifle_DMR_06_olive_F",
-	"srifle_DMR_03_multicam_F",
-	"srifle_DMR_03_khaki_F",
-	"srifle_DMR_03_tan_F",
-	"srifle_DMR_03_woodland_F",
-	"srifle_DMR_03_F",
-	"srifle_DMR_02_F",
-	"srifle_DMR_02_camo_F",
-	"srifle_DMR_02_sniper_F",
-	"srifle_DMR_05_blk_F",
-	"srifle_DMR_05_hex_F",
-	"srifle_DMR_05_tan_f",
-	"srifle_DMR_04_F",
-	"srifle_DMR_04_Tan_F",
-	"MMG_02_black_F",
-	"MMG_02_camo_F",
-	"MMG_02_sand_F",
-	"MMG_01_hex_F",
-	"MMG_01_tan_F"
+	"LMG_Zafir_F"
 ];
 
 vehicleAddition =
 [
-//	"muzzle_snds_L", // 9mm
-//	"muzzle_snds_M", // 5.56mm
-//	"muzzle_snds_H", // 6.5mm
-//	"muzzle_snds_H_MG", // 6.5mm LMG
-//	"muzzle_snds_B", // 7.62mm
-//	"muzzle_snds_acp", // .45 ACP
+	"muzzle_snds_L", // 9mm
+	"muzzle_snds_M", // 5.56mm
+	"muzzle_snds_H", // 6.5mm
+	"muzzle_snds_H_MG", // 6.5mm LMG
+	"muzzle_snds_B", // 7.62mm
+	"muzzle_snds_acp", // .45 ACP
 	"optic_Arco",
 	"optic_SOS",
 	"optic_Hamr",
@@ -238,16 +206,7 @@ vehicleAddition =
 	"Medikit",
 	"Medikit",
 	"FirstAidKit",
-	"ToolKit",
-	
-//	DLC Items
-	"optic_AMS",
-	"optic_AMS_khk",
-	"optic_AMS_snd",
-	"optic_KHS_blk",
-	"optic_KHS_hex",
-	"optic_KHS_old",
-	"optic_KHS_tan"
+	"ToolKit"
 ];
 
 vehicleAddition2 =
@@ -255,7 +214,5 @@ vehicleAddition2 =
 	"Chemlight_blue",
 	"Chemlight_green",
 	"Chemlight_yellow",
-	"Chemlight_red",
-	"MiniGrenade",
-	"HandGrenade"
+	"Chemlight_red"
 ];

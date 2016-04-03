@@ -48,32 +48,10 @@ lootWeapon_list =
 			"LMG_Zafir_F",
 			"Rangefinder",
 			"SMG_01_F",                         // Vermin .45 ACP
-			"SMG_02_F",							// Sting 9mm
-			
-//			DLC Weapons
+			"SMG_02_F",                         // Sting 9mm
 			"srifle_EBR_F",
 			"srifle_GM6_F",
-			"srifle_LRR_F",
-			"srifle_DMR_06_camo_F",
-			"srifle_DMR_06_olive_F",
-			"srifle_DMR_03_multicam_F",
-			"srifle_DMR_03_khaki_F",
-			"srifle_DMR_03_tan_F",
-			"srifle_DMR_03_woodland_F",
-			"srifle_DMR_03_F",
-			"srifle_DMR_02_F",
-			"srifle_DMR_02_camo_F",
-			"srifle_DMR_02_sniper_F",
-			"srifle_DMR_05_blk_F",
-			"srifle_DMR_05_hex_F", 
-			"srifle_DMR_05_tan_f",
-			"srifle_DMR_04_F",
-			"srifle_DMR_04_Tan_F",
-			"MMG_02_black_F",
-			"MMG_02_camo_F", 
-			"MMG_02_sand_F",
-			"MMG_01_hex_F",
-			"MMG_01_tan_F"
+			"srifle_LRR_F"
 		]
 	],
 	[ // INDUSTRIAL
@@ -99,17 +77,7 @@ lootWeapon_list =
 			"arifle_MX_GL_F",
 			"Rangefinder",
 			"srifle_GM6_F",
-			"srifle_LRR_F",
-			
-//			DLC Weapons
-			"srifle_DMR_02_F",
-			"srifle_DMR_02_camo_F",
-			"srifle_DMR_02_sniper_F",
-			"srifle_DMR_05_blk_F",
-			"srifle_DMR_05_hex_F",
-			"srifle_DMR_05_tan_f",
-			"srifle_DMR_04_F",
-			"srifle_DMR_04_Tan_F"		
+			"srifle_LRR_F"
 		]
 	]
 ];
@@ -193,14 +161,7 @@ lootMagazine_list =
 			"HandGrenade",
 			"MiniGrenade",
 			"SatchelCharge_Remote_Mag",
-			"SLAMDirectionalMine_Wire_Mag",
-			
-//			DLC Ammo
-			"10Rnd_338_Mag",
-			"130Rnd_338_Mag",
-			"10Rnd_93x64_DMR_05_Mag",
-			"150Rnd_93x64_Mag",
-			"10Rnd_127x54_Mag"
+			"SLAMDirectionalMine_Wire_Mag"
 		]
 	],
 	[ // INDUSTRIAL
@@ -231,14 +192,7 @@ lootMagazine_list =
 			"30Rnd_65x39_caseless_green",
 			"30Rnd_65x39_caseless_green",
 			"5Rnd_127x108_Mag",
-			"7Rnd_408_Mag",
-			
-//			DLC Ammo
-			"10Rnd_338_Mag",
-			"130Rnd_338_Mag",
-			"10Rnd_93x64_DMR_05_Mag",
-			"150Rnd_93x64_Mag",
-			"10Rnd_127x54_Mag"
+			"7Rnd_408_Mag"
 		]
 	]
 ];
@@ -274,6 +228,12 @@ lootItem_list =
 			"FirstAidKit",
 			"ItemGPS",
 			"Medikit",
+			"muzzle_snds_acp",                  // .45 ACP
+			"muzzle_snds_B",                    // 7.62mm
+			"muzzle_snds_H",                    // 6.5mm
+			"muzzle_snds_H_MG",                 // 6.5mm LMG
+			"muzzle_snds_L",                    // 9mm
+			"muzzle_snds_M",                    // 5.56mm
 			"NVGoggles",
 			//"NVGoggles_INDEP",
 			//"NVGoggles_OPFOR",
@@ -291,10 +251,7 @@ lootItem_list =
 			"H_HelmetO_ocamo",
 			"V_PlateCarrier1_rgr",
 			"V_PlateCarrierIA1_dgtl",
-			"V_HarnessO_brn",
-			"bipod_01_F_blk",
-			"bipod_02_F_blk",
-			"bipod_03_F_blk"
+			"V_HarnessO_brn"
 		]
 	],
 	[ // INDUSTRIAL
@@ -321,38 +278,7 @@ lootItem_list =
 			"optic_Nightstalker",
 			"optic_NVS",
 			"optic_SOS",
-			"optic_LRPS",
-			"V_RebreatherB",
-			"acc_flashlight",
-			"acc_pointer_IR",
-			"FirstAidKit",
-			"ItemGPS",
-			"Medikit",
-			"muzzle_snds_acp",                  // .45 ACP
-			"muzzle_snds_B",                    // 7.62mm
-			"muzzle_snds_H",                    // 6.5mm
-			"muzzle_snds_H_MG",                 // 6.5mm LMG
-			"muzzle_snds_L",                    // 9mm
-			"muzzle_snds_M",                    // 5.56mm
-			"NVGoggles",
-			//"NVGoggles_INDEP",
-			//"NVGoggles_OPFOR",
-			"optic_Aco",
-			"optic_ACO_grn",
-			"optic_aco_smg",
-			"optic_Arco",
-			"optic_Hamr",
-			"optic_SOS",
-			"ToolKit",
-			"H_HelmetB",
-			"H_HelmetIA",
-			"H_HelmetO_ocamo",
-			"V_PlateCarrier1_rgr",
-			"V_PlateCarrierIA1_dgtl",
-			"V_HarnessO_brn",
-			"bipod_01_F_blk",
-			"bipod_02_F_blk",
-			"bipod_03_F_blk"
+			"V_RebreatherB"
 		]
 	]
 ];

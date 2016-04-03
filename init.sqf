@@ -6,7 +6,13 @@
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev
 //	@file Description: The main init.
 
+#include "debugFlag.hpp"
+
+#ifdef A3W_DEBUG
+#define DEBUG true
+#else
 #define DEBUG false
+#endif
 
 enableSaving [false, false];
 
@@ -83,9 +89,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\JumpMF\init.sqf";
-	[] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
+	[] execVM "addons\outlw_magRepack\MagRepack_init.sqf";
 	[] execVM "addons\lsd_nvg\init.sqf";
-	[] execVM "addons\MeanY_3rd_fps\3rdrestriction.sqf"; //3rd person restrictions
-//	[] execVM "addons\disableThermal\disablethermal.sqf";  //disable thermal vision (call from client\init.sqf)
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };

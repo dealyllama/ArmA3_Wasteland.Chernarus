@@ -8,9 +8,9 @@
 
 if (!hasInterface) exitWith {};
 
-#define ICON_fadeDistance 500
-#define ICON_limitDistance 600
-#define ICON_sizeScale 0.4
+#define ICON_fadeDistance 1250
+#define ICON_limitDistance 2000
+#define ICON_sizeScale 0.75
 
 if (isNil "showPlayerNames") then { showPlayerNames = false };
 
